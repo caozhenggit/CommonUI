@@ -22,7 +22,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.caozheng.ui.R;
-import com.caozheng.ui.dialog.helper.DisplayHelper;
+import com.caozheng.ui.helper.DisplayHelper;
 import com.caozheng.ui.dialog.view.LoadingView;
 
 import java.lang.annotation.Retention;

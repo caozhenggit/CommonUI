@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.animation.LinearInterpolator;
 
 import com.caozheng.ui.R;
-import com.caozheng.ui.dialog.helper.DisplayHelper;
+import com.caozheng.ui.helper.DisplayHelper;
 
 /**
  * 用于显示 Loading 的 {@link View}，支持颜色和大小的设置。

@@ -1,4 +1,4 @@
-package com.caozheng.ui.dialog.helper;
+package com.caozheng.ui.helper;
 
 import android.app.Activity;
 import android.content.Context;
