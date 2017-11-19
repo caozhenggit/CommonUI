@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     ListView mLv;
 
     private String[] listItems = new String[]{
+            "闪屏页",
             "提示类对话框",
             "无限循环viewpager",
     };
@@ -49,13 +50,16 @@ public class MainActivity extends AppCompatActivity {
         mLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> view, View view1, int i, long l) {
-                final XTipDialog tipDialog;
                 switch (i) {
                     case 0:
-                        startActivity(new Intent(MainActivity.this, TipDialogActivity.class));
+                        startActivity(new Intent(MainActivity.this, SplashActivity.class));
                         break;
 
                     case 1:
+                        startActivity(new Intent(MainActivity.this, TipDialogActivity.class));
+                        break;
+
+                    case 2:
                         startActivity(new Intent(MainActivity.this, LoopViewPagerActivity.class));
                         break;
 
