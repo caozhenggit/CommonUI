@@ -21,6 +21,7 @@
 
         <activity android:name=".LoopViewPagerActivity"/>
         <activity android:name=".TipDialogActivity"/>
+        <activity android:name=".BottomSheetDialogActivity"/>
         <activity android:name=".SplashActivity"/>
     </application>
 

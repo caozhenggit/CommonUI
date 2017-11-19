@@ -9,6 +9,7 @@ import android.graphics.Point;
 import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Environment;
+import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Display;
@@ -18,13 +19,10 @@ import android.view.WindowManager;
 import java.lang.reflect.Field;
 
 /**
- *
- * @author cginechen
- * @date 2016-03-17
+ * @author caozheng
+ * @date 2016/10/12
  */
 public class DisplayHelper {
-
-    private static final String TAG = "Devices";
 
     /**
      * DisplayMetrics
@@ -38,7 +36,7 @@ public class DisplayHelper {
     }
 
     /**
-     * 屏幕密度,系统源码注释不推荐使用
+     * 屏幕密度
      */
     public static final float DENSITY = Resources.getSystem()
             .getDisplayMetrics().density;
@@ -46,8 +44,7 @@ public class DisplayHelper {
     /**
      * 把以 dp 为单位的值，转化为以 px 为单位的值
      *
-     * @param dpValue
-     *            以 dp 为单位的值
+     * @param dpValue 以 dp 为单位的值
      * @return px value
      */
     public static int dpToPx(int dpValue) {
@@ -346,8 +343,17 @@ public class DisplayHelper {
             return (params.flags & WindowManager.LayoutParams.FLAG_FULLSCREEN) == WindowManager.LayoutParams.FLAG_FULLSCREEN;
     }
 
-
     public static boolean isElevationSupported() {
         return Build.VERSION.SDK_INT >= 21;
+    }
+
+    public static int getAttrDimen(Context context, int attrRes){
+        TypedValue typedValue = new TypedValue();
+        context.getTheme().resolveAttribute(attrRes, typedValue, true);
+        return TypedValue.complexToDimensionPixelSize(typedValue.data, getDisplayMetrics(context));
+    }
+
+    public static boolean isNullOrEmpty(@Nullable CharSequence string) {
+        return string == null || string.length() == 0;
     }
 }

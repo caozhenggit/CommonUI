@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.caozheng.ui.dialog.BottomSheetDialog;
 import com.caozheng.ui.dialog.XTipDialog;
 
 import butterknife.Bind;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private String[] listItems = new String[]{
             "闪屏页",
             "提示类对话框",
+            "底部对话框",
             "无限循环viewpager",
     };
 
@@ -60,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case 2:
+                        startActivity(new Intent(MainActivity.this, BottomSheetDialogActivity.class));
+                        break;
+
+                    case 3:
                         startActivity(new Intent(MainActivity.this, LoopViewPagerActivity.class));
                         break;
 
