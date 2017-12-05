@@ -1,6 +1,5 @@
 package com.caozheng.ui.dialog;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Typeface;
@@ -9,14 +8,12 @@ import android.os.Bundle;
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.AppCompatImageView;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewStub;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -41,12 +38,12 @@ import java.util.List;
  * @author caozheng
  * @date 2017/11/19
  *
- * describe:
+ * describe: 底部弹出的对话框
  */
 
-public class BottomSheetDialog extends Dialog {
+public class XBottomDialog extends Dialog {
 
-    private static final String TAG = "BottomSheetDialog";
+    private static final String TAG = "XBottomDialog";
 
     // 动画时长
     private final static int mAnimationDuration = 200;
@@ -55,7 +52,7 @@ public class BottomSheetDialog extends Dialog {
 
     private OnBottomSheetShowListener mOnBottomSheetShowListener;
 
-    public BottomSheetDialog(Context context) {
+    public XBottomDialog(Context context) {
         super(context, R.style.bottom_sheet_dialog);
     }
 
@@ -154,7 +151,7 @@ public class BottomSheetDialog extends Dialog {
                     @Override
                     public void run() {
                         try {
-                            BottomSheetDialog.super.dismiss();
+                            XBottomDialog.super.dismiss();
                         } catch (Exception e) {
                             Log.w(TAG, "dismiss error\n" + Log.getStackTraceString(e));
                         }
@@ -198,7 +195,7 @@ public class BottomSheetDialog extends Dialog {
 
         private Context mContext;
 
-        private BottomSheetDialog mDialog;
+        private XBottomDialog mDialog;
         private List<BottomSheetListItemData> mItems;
         private BaseAdapter mAdapter;
         private List<View> mHeaderViews;
@@ -331,8 +328,8 @@ public class BottomSheetDialog extends Dialog {
             return this;
         }
 
-        public BottomSheetDialog build() {
-            mDialog = new BottomSheetDialog(mContext);
+        public XBottomDialog build() {
+            mDialog = new XBottomDialog(mContext);
             View contentView = buildViews();
             mDialog.setContentView(contentView,
                     new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -411,7 +408,7 @@ public class BottomSheetDialog extends Dialog {
         }
 
         public interface OnSheetItemClickListener {
-            void onClick(BottomSheetDialog dialog, View itemView, int position, String tag);
+            void onClick(XBottomDialog dialog, View itemView, int position, String tag);
         }
 
         private static class BottomSheetListItemData {
@@ -557,7 +554,7 @@ public class BottomSheetDialog extends Dialog {
          */
         public static final int SECOND_LINE = 1;
         private Context mContext;
-        private BottomSheetDialog mDialog;
+        private XBottomDialog mDialog;
         private SparseArray<View> mFirstLineViews;
         private SparseArray<View> mSecondLineViews;
         private int mMiniItemWidth = -1;
@@ -667,8 +664,8 @@ public class BottomSheetDialog extends Dialog {
             }
         }
 
-        public BottomSheetDialog build() {
-            mDialog = new BottomSheetDialog(mContext);
+        public XBottomDialog build() {
+            mDialog = new XBottomDialog(mContext);
             View contentView = buildViews();
             mDialog.setContentView(contentView,
                     new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -791,7 +788,7 @@ public class BottomSheetDialog extends Dialog {
         }
 
         public interface OnSheetItemClickListener {
-            void onClick(BottomSheetDialog dialog, View itemView);
+            void onClick(XBottomDialog dialog, View itemView);
         }
 
         @Retention(RetentionPolicy.SOURCE)

@@ -8,9 +8,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.caozheng.ui.dialog.BottomSheetDialog;
-import com.caozheng.ui.dialog.XTipDialog;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 

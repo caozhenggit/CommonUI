@@ -4,12 +4,14 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Point;
 import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Environment;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Display;
@@ -355,5 +357,17 @@ public class DisplayHelper {
 
     public static boolean isNullOrEmpty(@Nullable CharSequence string) {
         return string == null || string.length() == 0;
+    }
+
+    public static int getAttrColor(Context context, int attrRes){
+        TypedValue typedValue = new TypedValue();
+        context.getTheme().resolveAttribute(attrRes, typedValue, true);
+        return typedValue.data;
+    }
+
+    public static ColorStateList getAttrColorStateList(Context context, int attrRes){
+        TypedValue typedValue = new TypedValue();
+        context.getTheme().resolveAttribute(attrRes, typedValue, true);
+        return ContextCompat.getColorStateList(context, typedValue.resourceId);
     }
 }

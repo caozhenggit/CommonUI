@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.caozheng.ui.dialog.BottomSheetDialog;
+import com.caozheng.ui.dialog.XBottomDialog;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -73,14 +73,14 @@ public class BottomSheetDialogActivity extends AppCompatActivity {
     }
 
     private void showBottomList1() {
-        new BottomSheetDialog.BottomListSheetBuilder(mContext, true)
+        new XBottomDialog.BottomListSheetBuilder(mContext, true)
                 .addItem("Item 0")
                 .addItem("Item 1")
                 .addItem("Item 2")
                 .setCheckedIndex(0)
-                .setOnSheetItemClickListener(new BottomSheetDialog.BottomListSheetBuilder.OnSheetItemClickListener() {
+                .setOnSheetItemClickListener(new XBottomDialog.BottomListSheetBuilder.OnSheetItemClickListener() {
                     @Override
-                    public void onClick(BottomSheetDialog dialog, View itemView, int position, String tag) {
+                    public void onClick(XBottomDialog dialog, View itemView, int position, String tag) {
                         Toast.makeText(mContext, "点击了 Item" + position, Toast.LENGTH_SHORT).show();
 
                         dialog.dismiss();
@@ -89,13 +89,13 @@ public class BottomSheetDialogActivity extends AppCompatActivity {
     }
 
     private void showBottomList2() {
-        new BottomSheetDialog.BottomListSheetBuilder(mContext)
+        new XBottomDialog.BottomListSheetBuilder(mContext)
                 .addItem(R.mipmap.ic_launcher, "Item 0")
                 .addItem(R.mipmap.ic_launcher, "Item 1")
                 .addItem(R.mipmap.ic_launcher, "Item 2")
-                .setOnSheetItemClickListener(new BottomSheetDialog.BottomListSheetBuilder.OnSheetItemClickListener() {
+                .setOnSheetItemClickListener(new XBottomDialog.BottomListSheetBuilder.OnSheetItemClickListener() {
                     @Override
-                    public void onClick(BottomSheetDialog dialog, View itemView, int position, String tag) {
+                    public void onClick(XBottomDialog dialog, View itemView, int position, String tag) {
                         Toast.makeText(mContext, "点击了 Item" + position, Toast.LENGTH_SHORT).show();
 
                         dialog.dismiss();
@@ -109,15 +109,15 @@ public class BottomSheetDialogActivity extends AppCompatActivity {
         final int TAG_SHARE_WEIBO = 2;
         final int TAG_SHARE_CHAT = 3;
         final int TAG_SHARE_LOCAL = 4;
-        BottomSheetDialog.BottomGridSheetBuilder builder = new BottomSheetDialog.BottomGridSheetBuilder(mContext);
-        builder.addItem(R.mipmap.icon_more_operation_share_friend, "分享到微信", TAG_SHARE_WECHAT_FRIEND, BottomSheetDialog.BottomGridSheetBuilder.FIRST_LINE)
-                .addItem(R.mipmap.icon_more_operation_share_moment, "分享到朋友圈", TAG_SHARE_WECHAT_MOMENT, BottomSheetDialog.BottomGridSheetBuilder.FIRST_LINE)
-                .addItem(R.mipmap.icon_more_operation_share_weibo, "分享到微博", TAG_SHARE_WEIBO, BottomSheetDialog.BottomGridSheetBuilder.FIRST_LINE)
-                .addItem(R.mipmap.icon_more_operation_share_chat, "分享到私信", TAG_SHARE_CHAT, BottomSheetDialog.BottomGridSheetBuilder.FIRST_LINE)
-                .addItem(R.mipmap.icon_more_operation_save, "保存到本地", TAG_SHARE_LOCAL, BottomSheetDialog.BottomGridSheetBuilder.SECOND_LINE)
-                .setOnSheetItemClickListener(new BottomSheetDialog.BottomGridSheetBuilder.OnSheetItemClickListener() {
+        XBottomDialog.BottomGridSheetBuilder builder = new XBottomDialog.BottomGridSheetBuilder(mContext);
+        builder.addItem(R.mipmap.icon_more_operation_share_friend, "分享到微信", TAG_SHARE_WECHAT_FRIEND, XBottomDialog.BottomGridSheetBuilder.FIRST_LINE)
+                .addItem(R.mipmap.icon_more_operation_share_moment, "分享到朋友圈", TAG_SHARE_WECHAT_MOMENT, XBottomDialog.BottomGridSheetBuilder.FIRST_LINE)
+                .addItem(R.mipmap.icon_more_operation_share_weibo, "分享到微博", TAG_SHARE_WEIBO, XBottomDialog.BottomGridSheetBuilder.FIRST_LINE)
+                .addItem(R.mipmap.icon_more_operation_share_chat, "分享到私信", TAG_SHARE_CHAT, XBottomDialog.BottomGridSheetBuilder.FIRST_LINE)
+                .addItem(R.mipmap.icon_more_operation_save, "保存到本地", TAG_SHARE_LOCAL, XBottomDialog.BottomGridSheetBuilder.SECOND_LINE)
+                .setOnSheetItemClickListener(new XBottomDialog.BottomGridSheetBuilder.OnSheetItemClickListener() {
                     @Override
-                    public void onClick(BottomSheetDialog dialog, View itemView) {
+                    public void onClick(XBottomDialog dialog, View itemView) {
                         dialog.dismiss();
                         int tag = (int) itemView.getTag();
                         switch (tag) {

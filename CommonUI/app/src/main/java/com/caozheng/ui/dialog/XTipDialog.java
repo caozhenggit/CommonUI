@@ -32,7 +32,7 @@ import java.lang.annotation.RetentionPolicy;
  * @author caozheng
  * Created time on 2017/11/1
  *
- * description:
+ * description: 提示对话框
  */
 public class XTipDialog extends Dialog{
 
@@ -60,9 +60,9 @@ public class XTipDialog extends Dialog{
     }
 
     /**
-     * 生成默认的 {@link XTipDialog}
+     * 生成默认的XTipDialog
      * <p>
-     * 提供了一个图标和一行文字的样式, 其中图标有几种类型可选。见 {@link IconType}
+     * 提供了一个图标和一行文字的样式, 其中图标有几种类型可选
      * </p>
      *
      * @see CustomBuilder
@@ -108,7 +108,6 @@ public class XTipDialog extends Dialog{
         /**
          * 设置显示icon 类型
          *
-         * @see IconType
          */
         public Builder setIconType(@IconType int iconType) {
             mCurrentIconType = iconType;
@@ -124,7 +123,7 @@ public class XTipDialog extends Dialog{
         }
 
         /**
-         * 创建 Dialog, 但没有弹出来, 如果要弹出来, 请调用返回值的 {@link Dialog#show()} 方法
+         * 创建 Dialog
          *
          * @return 创建的 Dialog
          */
